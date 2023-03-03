@@ -4,8 +4,13 @@ type userProps = {
   age: number;
   isAdult: boolean;
   lang: string[];
+  skill: {
+    isHePlayed: boolean;
+    heGoesSchool: string;
+    howManyYearsHeLeanProgramming: number;
+  };
 };
-const User = ({ name, age, isAdult, lang }: userProps) => {
+const User = ({ name, age, isAdult, lang, skill }: userProps) => {
   return (
     <div>
       <h2>{name}</h2>
@@ -16,6 +21,7 @@ const User = ({ name, age, isAdult, lang }: userProps) => {
           return <span key={idx}>{language} </span>;
         })}
       </p>
+      <p>{skill.isHePlayed ? "se khela kore" : "se khela kore na"}</p>
     </div>
   );
 };
